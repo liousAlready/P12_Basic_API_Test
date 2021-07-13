@@ -40,8 +40,19 @@ class LocalconfigUtils():
         report_path = self.cfg.get('path', 'REPORT_PATH')
         return report_path
 
+    @property
+    def APPID(self):
+        appid_value = self.cfg.get('default', 'APPID')
+        return appid_value
+
+    @property
+    def SECRET(self):
+        secret_value = self.cfg.get('default', 'SECRET')
+        return secret_value
+
 
 local_config = LocalconfigUtils()
 
 if __name__ == "__main__":
     print(local_config.REPORT_PATH)
+    print(local_config.SECRET)
